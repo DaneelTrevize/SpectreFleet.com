@@ -294,7 +294,9 @@ class CI_Security {
 	 */
 	public function csrf_show_error()
 	{
-		show_error('The action you have requested is not allowed.', 403);
+		// Modified by Daneel Trevize
+		log_message( 'error', 'CSRF token invalid for URI:'. $_SERVER['REQUEST_URI'] );
+		show_error('CSRF token invalid.', 403);
 	}
 
 	// --------------------------------------------------------------------
