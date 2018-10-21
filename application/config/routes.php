@@ -49,6 +49,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+#Order of Precedence is High to Low
+$route['404_override'] = 'pages/view';
+$route['default_controller'] = 'activity/fleets';	// The reserved routes must come before any wildcard or regular expression routes.
+$route['articles/(:any)'] = 'articles/view/$1';
+$route['articles'] = 'articles';
+$route['polls/(:num)'] = 'polls/view/$1';
+$route['polls'] = 'polls';
+$route['social'] = 'social';
+$route['doctrine'] = 'doctrine';
+$route['f/f/(:num)'] = 'doctrine/fleet/$1';
+$route['f/s/(:num)'] = 'doctrine/fit/$1';
+$route['portal'] = 'portal';
+$route['verify/SSO'] = 'authentication/SSO';
+$route['login'] = 'authentication';
+$route['logout'] = 'authentication/logout';
+$route['authentication'] = 'authentication';
+$route['invites'] = 'invites';
+$route['fleets2'] = 'fleets2';
+$route['fleets3'] = 'fleets3';
+$route['motd'] = 'channel/motd';
+$route['channel'] = 'channel';
+$route['feedback/(:num)'] = 'feedback/index/$1';
+$route['feedback'] = 'feedback/index';
+$route['command_application'] = 'pages/view/join_command';	// Legacy redirect for those probably seeking /manage/apply
+$route['discordauth'] = 'discordauth';
+$route['rss'] = 'rss';
+$route['l/(:any)'] = 'tool/l/$1';
+$route['lscan'] = 'tool/lscan';
+$route['d/(.+)'] = 'tool/d/$1';
+$route['dscan'] = 'tool/dscan';
+$route['dscan/(:num)'] = 'tool/dscan/$1';
+$route['dscan/image/(:num)/(:num)'] = 'tool/image/$1/$2';
+$route['(:any)'] = 'pages/view/$1';

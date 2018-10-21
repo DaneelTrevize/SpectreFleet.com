@@ -1,0 +1,3 @@
+							<p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>&nbsp;Mistakes in <a href="https://developers.eveonline.com/blog/article/esi-chat-channel-deprecation">CCP's Chat Channel changes</a> have forced us to migrate to a new channel: "<strong>SF Spectre Fleet</strong>".<br>
+							We must also use a manual process to update this online fleet schedule until their API is restored (no ETA given).</p>
+							<hr>
